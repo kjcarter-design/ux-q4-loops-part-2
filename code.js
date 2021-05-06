@@ -39,11 +39,9 @@ Log all 20 elements of numberArray.
 console.log("1) - Log every number"); // These console.log lines are to help with grading, ignore them.
 
 function logEveryNumber() {
-  /* 
-  Your code goes below
-  Write a for or a while loop
-  Use console.log() to print every number 
-  */
+  for (let number of numberArray) {
+    console.log(number);
+  }
 }
 
 logEveryNumber();
@@ -66,11 +64,11 @@ number % 2 === 0 will be true if the number is even, and false if the number is 
 console.log("2) - Log even numbers");
 
 function logEvenNumbers() {
-  /* 
-  Your code goes below
-  Write a for or a while loop
-  console.log() the result 
-  */
+  for (let number of numberArray) {
+    if (number % 2 === 0) {
+      console.log(number);
+    }
+  }
 }
 
 logEvenNumbers();
@@ -85,11 +83,11 @@ Display all the odd numbers contained in sampleArray.
 console.log("3) - Log odd numbers");
 
 function logOddNumbers() {
-  /* 
-  Your code goes below
-  Write a for or a while loop
-  console.log() the result 
-  */
+  for (let number of numberArray) {
+    if (number % 2 === 1) {
+      console.log(number);
+    }
+  }
 }
 
 logOddNumbers();
@@ -110,11 +108,11 @@ if number % 8 === 0, then it is divisible by 8.
 console.log("4) - Log numbers divisible by 8");
 
 function logNumbersDivisibleByEight() {
-  /* 
-  Your code goes below
-  Write a for or a while loop
-  console.log() the result 
-  */
+  for (let number of numberArray) {
+    if (number % 8 === 0) {
+      console.log(number);
+    }
+  }
 }
 
 logNumbersDivisibleByEight();
@@ -129,11 +127,11 @@ Hint: It should be 9096
 console.log("5) - Sum of numbers (9096)");
 
 function sumOfNumbers() {
-  /* 
-  Your code goes below
-  Write a for or a while loop
-  console.log() the result 
-  */
+  let total = 0;
+  for (let number of numberArray) {
+    total += number;
+  }
+  console.log(total);
 }
 
 sumOfNumbers();
@@ -153,12 +151,11 @@ console.log("6) - count of numbers > 500 (7)");
 
 function countNumbersGreaterThanFiveHundred() {
   let num = 0;
-  /* 
-  Your code goes below
-  Write a for or a while loop
-  Every time you find a number greater than 500, add one to num.
-  */
-
+  for (let number of numberArray) {
+    if (number > 500) {
+      num++;
+    }
+  }
   console.log(num);
 }
 
@@ -178,6 +175,13 @@ function findSmallestNumber() {
   Write a for or a while loop
   console.log() the result 
   */
+  let smallestNumber;
+  for (let currentNumber of numberArray) {
+    if (!smallestNumber || currentNumber < smallestNumber) {
+      smallestNumber = currentNumber;
+    }
+  }
+  console.log(smallestNumber);
 }
 
 findSmallestNumber();
@@ -191,11 +195,13 @@ Display the largest element in sampleArray.
 console.log("8 - Largest Number (940)"); // These console.log lines are to help with grading, ignore them.
 
 function findLargestNumber() {
-  /* 
-  Your code goes below
-  Write a for or a while loop
-  console.log() the result 
-  */
+  let largestNumber;
+  for (let currentNumber of numberArray) {
+    if (!largestNumber || currentNumber > largestNumber) {
+      largestNumber = currentNumber;
+    }
+  }
+  console.log(largestNumber);
 }
 
 findLargestNumber();
@@ -222,7 +228,11 @@ function findNumbersLessThanFourHundred() {
   Write a for or a while loop
   add all numbers less then 400 to newArray
   */
-
+  for (let currentNumber of numberArray) {
+    if (currentNumber < 400) {
+      newArray.push(currentNumber);
+    }
+  }
   console.log(newArray);
 }
 
